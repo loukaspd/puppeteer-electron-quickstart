@@ -36,9 +36,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+TODO"
+    "url": "git+https://github.com/loukaspd/puppeteer-electron-quickstart"
   },
   "author": "loukaspd",
   "license": "MIT",
-  "homepage": "TODO"
+  "homepage": "https://github.com/loukaspd/puppeteer-electron-quickstart"
 }
