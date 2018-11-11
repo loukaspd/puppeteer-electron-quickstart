@@ -1,0 +1,44 @@
+{
+  "name": "puppeteer-electron-quickstart",
+  "version": "0.0.1",
+  "description": "Quickstart app for electron application that uses Puppeteer",
+  "main": "electron_main.js",
+  "dependencies": {
+    "puppeteer-core": "^1.9.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-watch": "^2.0.7",
+    "electron": "^1.8.1",
+    "electron-builder": "^20.29.0"
+  },
+  "scripts": {
+    "babel_build": "babel --source-maps --out-dir=babel-output src",
+    "copy-babel-output": "node import-babel-scripts.js",
+
+    "start": "npm run babel_build & npm run copy-babel-output & electron .",
+    "start_dev": "babel-node --presets env,stage-3 src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    
+    "dist": "npm run babel_build & npm run copy-babel-output & build"
+  },
+  "build": {
+    "appId": "gr.loukaspd.puppeteer-electron-quickstart",
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+TODO"
+  },
+  "author": "loukaspd",
+  "license": "MIT",
+  "homepage": "TODO"
+}
