@@ -34,6 +34,7 @@ export class PuppeteerWrapper {
             executablePath: this.chromePath
         });
         this._logger.logInfo("Puppeteer initialized");
+        return true;
     }
 
     async cleanup() {
