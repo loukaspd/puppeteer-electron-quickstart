@@ -10,7 +10,8 @@ import { PuppeteerWrapper } from './lib/puppeteer-wrapper';
 //#region Setup - Dependency Injection-----------------------------------------------
 const _logger = new Logger();
 const _filePaths = new FilePaths(_logger, "puppeteer-electron-quickstart");
-const _puppeteerWrapper = new PuppeteerWrapper(_logger, _filePaths);
+const _puppeteerWrapper = new PuppeteerWrapper(_logger, _filePaths,
+    { headless: false, width:1920, height: 1080 });
 
 //#endregion
 
@@ -19,7 +20,7 @@ const _puppeteerWrapper = new PuppeteerWrapper(_logger, _filePaths);
 async function main() {
     /* main code
     ... 
-    const page =  _puppeteerWrapper.newPage();
+    const page =  await _puppeteerWrapper.newPage();
     await page.goto('https:/www.google.com');
     ...
     */
@@ -27,7 +28,7 @@ async function main() {
 
 (async () => {
     try {
-        const chromeSet = await _puppeteerWrapper.setup({ headless: true });
+        const chromeSet = await _puppeteerWrapper.setup();
         if (!chromeSet) {
             return;
         }
